@@ -31,18 +31,21 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ====== HEADER COM IMAGEM - CORRIGIDO ====== */
+/* ====== HEADER COM IMAGEM ====== */
 .header-custom {
   width: 100%;
   max-width: 100%;
   height: auto;
   min-height: 300px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   margin: 0;
   padding: 0;
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-background {
@@ -53,6 +56,34 @@ html, body {
   padding: 0;
   border: none;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* ====== FOTO REDONDA CENTRALIZADA ====== */
+.profile-photo-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 6px solid var(--orange);
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
 }
 
 /* ====== NAVIGATION ====== */
@@ -404,7 +435,13 @@ footer strong {
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
   .header-custom {
-    min-height: 200px;
+    min-height: 250px;
+  }
+
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    border: 5px solid var(--orange);
   }
 
   section {
@@ -432,7 +469,13 @@ footer strong {
 
 @media (max-width: 480px) {
   .header-custom {
-    min-height: 150px;
+    min-height: 200px;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    border: 4px solid var(--orange);
   }
 
   section {
@@ -450,9 +493,12 @@ footer strong {
     </style>
 </head>
 <body>
-    <!-- HEADER COM IMAGEM DE CAPA -->
+    <!-- HEADER COM IMAGEM DE CAPA E FOTO REDONDA -->
     <header class="header-custom">
         <img src="capa.jpg" alt="Capa do Portfólio" class="header-background">
+        <div class="profile-photo-wrapper">
+            <img src="foto.jpg" alt="Gabriel Henrique Santos Oliveira" class="profile-photo">
+        </div>
     </header>
 
     <!-- NAVIGATION -->
