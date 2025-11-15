@@ -14,115 +14,93 @@
 }
 
 :root {
+  --linkedin-blue: #0a66c2;
   --dark: #2d2d2d;
   --orange: #ff9800;
   --cream: #f5f1e8;
-  --cream-light: #faf8f3;
   --text-dark: #1a1a1a;
   --text-gray: #666666;
   --border: #e0dcd4;
-  --accent: #ff9800;
 }
 
 html, body {
   width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: linear-gradient(to right, #f5f1e8 0%, #f5f1e8 50%, #faf8f3 50%, #faf8f3 100%);
+  background: #ffffff;
   color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* ====== HEADER COM FOTO E DESIGN ====== */
-.header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 400px;
-  align-items: center;
+/* ====== HEADER LINKEDIN AZUL ====== */
+.header-linkedin {
+  background: linear-gradient(135deg, #0a66c2 0%, #0d66d0 100%);
+  color: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.header::before {
+.header-linkedin::before {
   content: '';
   position: absolute;
-  left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #2d2d2d 0%, #2d2d2d 50%, #f5f1e8 50%, #f5f1e8 100%);
-  z-index: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-.header-left {
+.header-content {
   position: relative;
   z-index: 1;
-  padding: 60px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .profile-photo {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border: 4px solid var(--orange);
+  border: 5px solid #ffffff;
   object-fit: cover;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+  margin: 0 auto 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
+  display: block;
 }
 
 .profile-photo:hover {
   transform: scale(1.05);
 }
 
-.header-left h1 {
-  font-size: 1.4rem;
-  color: #ffffff;
-  font-weight: 700;
-  text-align: center;
+.header-linkedin h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.header-linkedin .subtitle {
+  font-size: 1.2rem;
   margin-bottom: 8px;
+  opacity: 0.95;
+  font-weight: 500;
 }
 
-.header-left p {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.85);
-  text-align: center;
-}
-
-.header-right {
-  position: relative;
-  z-index: 1;
-  padding: 60px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-right h2 {
-  font-size: 1.3rem;
-  color: var(--text-dark);
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
-}
-
-.circuit-icon {
-  font-size: 3rem;
-  color: var(--orange);
-  margin-bottom: 15px;
-  opacity: 0.9;
+.header-linkedin .specialty {
+  font-size: 1rem;
+  opacity: 0.85;
+  font-weight: 400;
 }
 
 /* ====== NAVIGATION ====== */
 .nav {
   background: #ffffff;
-  border-bottom: 2px solid var(--orange);
+  border-bottom: 3px solid var(--orange);
   padding: 15px 20px;
   position: sticky;
   top: 0;
@@ -131,7 +109,7 @@ html, body {
 }
 
 .nav-content {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   gap: 25px;
@@ -147,6 +125,9 @@ html, body {
   transition: all 0.3s ease;
   font-size: 0.95rem;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .nav a:hover {
@@ -156,7 +137,7 @@ html, body {
 
 /* ====== CONTAINER ====== */
 .container {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -288,7 +269,6 @@ section h2 i {
   font-size: 0.8rem;
 }
 
-/* ====== TAGS ====== */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -464,31 +444,24 @@ footer strong {
 }
 
 /* ====== RESPONSIVE ====== */
-@media (max-width: 960px) {
-  .header {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .header::before {
-    background: linear-gradient(to bottom, #2d2d2d 0%, #2d2d2d 50%, #f5f1e8 50%, #f5f1e8 100%);
-  }
-
-  .header-left,
-  .header-right {
-    padding: 40px 30px;
-  }
-
-  .header-left h1 {
-    font-size: 1.2rem;
-  }
-
-  .header-right h2 {
-    font-size: 1.1rem;
-  }
-}
-
 @media (max-width: 768px) {
+  .header-linkedin {
+    padding: 40px 20px;
+  }
+
+  .header-linkedin h1 {
+    font-size: 1.6rem;
+  }
+
+  .header-linkedin .subtitle {
+    font-size: 1rem;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
   section {
     padding: 25px;
     margin: 20px auto;
@@ -513,23 +486,21 @@ footer strong {
 }
 
 @media (max-width: 480px) {
-  .header-left,
-  .header-right {
-    padding: 30px 20px;
+  .header-linkedin {
+    padding: 30px 15px;
+  }
+
+  .header-linkedin h1 {
+    font-size: 1.3rem;
+  }
+
+  .header-linkedin .subtitle {
+    font-size: 0.9rem;
   }
 
   .profile-photo {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 20px;
-  }
-
-  .header-left h1 {
-    font-size: 1rem;
-  }
-
-  .header-right h2 {
-    font-size: 0.95rem;
+    width: 110px;
+    height: 110px;
   }
 
   section {
@@ -547,18 +518,13 @@ footer strong {
     </style>
 </head>
 <body>
-    <!-- HEADER COM DESIGN LINKEDIN -->
-    <header class="header">
-        <div class="header-left">
+    <!-- HEADER LINKEDIN AZUL COM FOTO -->
+    <header class="header-linkedin">
+        <div class="header-content">
             <img src="foto.jpg" alt="Gabriel Henrique Santos Oliveira" class="profile-photo">
-            <h1>Gabriel Henrique<br>Santos Oliveira</h1>
-            <p>Engenheiro de Controle e Automação</p>
-        </div>
-        <div class="header-right">
-            <div class="circuit-icon">
-                <i class="fas fa-microchip"></i>
-            </div>
-            <h2>Engenheiro de Controle<br>e Automação<br>Tecnologias Embarcadas</h2>
+            <h1>Gabriel Henrique Santos Oliveira</h1>
+            <p class="subtitle">Engenheiro de Controle e Automação</p>
+            <p class="specialty">Desenvolvimento Tecnológico | Automação de Processos</p>
         </div>
     </header>
 
@@ -632,7 +598,6 @@ footer strong {
                     <span class="tag">Indústria 4.0</span>
                     <span class="tag">SCADA</span>
                     <span class="tag">IoT</span>
-                    <span class="tag">HIL</span>
                 </div>
             </div>
 
@@ -648,7 +613,7 @@ footer strong {
                 <div class="tags">
                     <span class="tag">SCADA</span>
                     <span class="tag">Operações</span>
-                    <span class="tag">Liderança</span>
+                    <span class="tag">24/7</span>
                 </div>
             </div>
 
@@ -665,7 +630,6 @@ footer strong {
                     <span class="tag">Power BI</span>
                     <span class="tag">SQL</span>
                     <span class="tag">Excel</span>
-                    <span class="tag">Automação</span>
                 </div>
             </div>
         </section>
@@ -684,7 +648,7 @@ footer strong {
                 </div>
                 <div class="skill-card">
                     <h4><i class="fas fa-bolt"></i> Esquemas Elétricos</h4>
-                    <p><strong>QElectroTech</strong> - Esquemas elétricos, Diagramas de circuito, Simbologia industrial</p>
+                    <p><strong>QElectroTech</strong> - Esquemas elétricos, Diagramas de circuito, Simbologia</p>
                 </div>
                 <div class="skill-card">
                     <h4><i class="fas fa-chart-bar"></i> Desenvolvimento & Dados</h4>
@@ -731,23 +695,23 @@ footer strong {
                 </div>
                 <div class="differential-card">
                     <h4>Design Técnico Integrado</h4>
-                    <p>FreeCAD + QElectroTech = soluções completas de engenharia</p>
+                    <p>FreeCAD + QElectroTech = soluções completas</p>
                 </div>
                 <div class="differential-card">
                     <h4>Inovação e Criatividade</h4>
-                    <p>Pensamento criativo e problem-solving para soluções inovadoras</p>
+                    <p>Pensamento criativo e problem-solving avançado</p>
                 </div>
                 <div class="differential-card">
                     <h4>Formação Contínua</h4>
-                    <p>Pós-graduação USP + Residência CPQD em virtualização</p>
+                    <p>Pós-graduação USP + Residência CPQD</p>
                 </div>
                 <div class="differential-card">
-                    <h4>Experiência em Sistemas Críticos</h4>
-                    <p>Operação 24/7 de infraestruturas estratégicas de energia</p>
+                    <h4>Experiência Crítica</h4>
+                    <p>Operação 24/7 em infraestruturas estratégicas</p>
                 </div>
                 <div class="differential-card">
-                    <h4>Gestão Técnica & Projetos</h4>
-                    <p>Gestão com visão estratégica e liderança colaborativa</p>
+                    <h4>Gestão Técnica</h4>
+                    <p>Gestão estratégica e liderança colaborativa</p>
                 </div>
             </div>
         </section>
