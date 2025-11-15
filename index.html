@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Henrique Santos Oliveira | Engenheiro de Controle e Automação</title>
-    <meta name="description" content="Gabriel Henrique - Engenheiro especialista em CLPs Virtualizados, Design Mecânico (FreeCAD), Esquemas Elétricos (QElectroTech), Inovação e Automação Industrial.">
-    <meta name="keywords" content="Engenheiro, CLP, Virtualização, FreeCAD, QElectroTech, SCADA, Indústria 4.0, Inovação, Design Técnico">
+    <meta name="description" content="Gabriel Henrique - Engenheiro especialista em CLPs Virtualizados, Automação Industrial e Inovação Técnica.">
+    <meta name="keywords" content="Engenheiro, CLP, Virtualização, SCADA, Indústria 4.0, Inovação, Design Técnico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
 * {
@@ -15,20 +15,21 @@
 }
 
 :root {
-  --primary: #0d1117;
-  --secondary: #21262d;
-  --accent: #58a6ff;
-  --accent-light: #79c0ff;
-  --text: #c9d1d9;
-  --text-muted: #8b949e;
-  --border: #30363d;
-  --success: #3fb950;
+  --primary: #ffffff;
+  --secondary: #f3f6f8;
+  --accent: #0a66c2;
+  --accent-light: #0d66d0;
+  --accent-dark: #004182;
+  --text: #000000;
+  --text-muted: #666666;
+  --border: #e5e7eb;
+  --success: #0caf00;
 }
 
 html, body {
   width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto Mono', 'Courier New', monospace;
-  background: linear-gradient(135deg, var(--primary) 0%, #161b22 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #f3f6f8 0%, #e8ecf1 100%);
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
@@ -36,8 +37,8 @@ html, body {
 
 /* ====== HEADER COM FOTO ====== */
 .header {
-  background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
-  border-bottom: 2px solid var(--accent);
+  background: linear-gradient(135deg, #0a66c2 0%, #0d66d0 100%);
+  color: #ffffff;
   padding: 60px 20px;
   text-align: center;
   position: relative;
@@ -51,7 +52,7 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(88, 166, 255, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -66,10 +67,10 @@ html, body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 4px solid var(--accent);
+  border: 4px solid #ffffff;
   object-fit: cover;
   margin: 0 auto 25px;
-  box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -80,7 +81,6 @@ html, body {
 .header h1 {
   font-size: 2.8rem;
   margin-bottom: 10px;
-  color: var(--accent-light);
   font-weight: 900;
   letter-spacing: -1px;
 }
@@ -88,23 +88,24 @@ html, body {
 .header .subtitle {
   font-size: 1.4rem;
   margin-bottom: 10px;
-  color: var(--accent);
+  opacity: 0.95;
 }
 
 .header .specialty {
   font-size: 1rem;
-  color: var(--text-muted);
   margin-bottom: 20px;
+  opacity: 0.85;
 }
 
 /* ====== NAVIGATION ====== */
 .nav {
-  background: var(--secondary);
+  background: #ffffff;
   border-bottom: 1px solid var(--border);
   padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .nav-content {
@@ -119,15 +120,16 @@ html, body {
 .nav a {
   color: var(--text-muted);
   text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 6px;
   transition: all 0.3s ease;
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .nav a:hover {
   color: var(--accent);
-  background: rgba(88, 166, 255, 0.1);
+  background: rgba(10, 102, 194, 0.08);
 }
 
 /* ====== CONTAINER ====== */
@@ -139,21 +141,22 @@ html, body {
 
 /* ====== SECTIONS ====== */
 section {
-  background: var(--secondary);
+  background: var(--primary);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   margin: 30px auto;
-  padding: 35px;
+  padding: 40px;
   transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 section:hover {
   border-color: var(--accent);
-  box-shadow: 0 0 15px rgba(88, 166, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.1);
 }
 
 section h2 {
-  color: var(--accent-light);
+  color: var(--accent-dark);
   font-size: 1.6rem;
   margin-bottom: 20px;
   padding-bottom: 12px;
@@ -174,15 +177,15 @@ section h2 {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px;
-  background: rgba(88, 166, 255, 0.05);
-  border-radius: 4px;
+  padding: 12px;
+  background: #f3f6f8;
+  border-radius: 6px;
   border-left: 3px solid var(--accent);
   transition: all 0.3s ease;
 }
 
 .contact-item:hover {
-  background: rgba(88, 166, 255, 0.1);
+  background: rgba(10, 102, 194, 0.08);
   transform: translateX(5px);
 }
 
@@ -196,6 +199,7 @@ section h2 {
   color: var(--accent);
   text-decoration: none;
   transition: color 0.3s ease;
+  font-weight: 500;
 }
 
 .contact-item a:hover {
@@ -205,6 +209,15 @@ section h2 {
 
 .contact-item span {
   color: var(--text);
+  font-weight: 500;
+}
+
+/* ====== ABOUT ====== */
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-top: 15px;
 }
 
 /* ====== EXPERIENCE ====== */
@@ -220,9 +233,10 @@ section h2 {
 }
 
 .experience-item h3 {
-  color: var(--accent-light);
+  color: var(--accent-dark);
   font-size: 1.2rem;
   margin-bottom: 5px;
+  font-weight: 700;
 }
 
 .experience-meta {
@@ -261,18 +275,18 @@ section h2 {
 }
 
 .tag {
-  background: linear-gradient(135deg, rgba(88, 166, 255, 0.1), rgba(121, 192, 255, 0.05));
+  background: linear-gradient(135deg, rgba(10, 102, 194, 0.08), rgba(10, 102, 194, 0.05));
   color: var(--accent);
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
-  border: 1px solid var(--accent);
+  border: 1px solid rgba(10, 102, 194, 0.3);
   transition: all 0.3s ease;
 }
 
 .tag:hover {
-  background: linear-gradient(135deg, rgba(88, 166, 255, 0.2), rgba(121, 192, 255, 0.1));
+  background: linear-gradient(135deg, rgba(10, 102, 194, 0.15), rgba(10, 102, 194, 0.1));
   transform: translateY(-2px);
 }
 
@@ -285,21 +299,23 @@ section h2 {
 }
 
 .skill-card {
-  background: linear-gradient(135deg, rgba(88, 166, 255, 0.05), rgba(88, 166, 255, 0.02));
-  padding: 15px;
-  border-radius: 6px;
+  background: #f3f6f8;
+  padding: 18px;
+  border-radius: 8px;
   border-left: 4px solid var(--accent);
   transition: all 0.3s ease;
+  border: 1px solid var(--border);
 }
 
 .skill-card:hover {
-  background: linear-gradient(135deg, rgba(88, 166, 255, 0.1), rgba(88, 166, 255, 0.05));
+  background: #ffffff;
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(88, 166, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.12);
+  border-color: var(--accent);
 }
 
 .skill-card h4 {
-  color: var(--accent-light);
+  color: var(--accent-dark);
   margin-bottom: 10px;
   font-size: 1rem;
   font-weight: 700;
@@ -323,9 +339,10 @@ section h2 {
 }
 
 .education-item h3 {
-  color: var(--accent-light);
+  color: var(--accent-dark);
   font-size: 1.1rem;
   margin-bottom: 5px;
+  font-weight: 700;
 }
 
 .education-meta {
@@ -342,23 +359,24 @@ section h2 {
 }
 
 .differential-card {
-  background: linear-gradient(135deg, rgba(63, 185, 80, 0.05), rgba(88, 166, 255, 0.05));
+  background: #f3f6f8;
   padding: 18px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid var(--border);
   transition: all 0.3s ease;
 }
 
 .differential-card:hover {
-  border-color: var(--success);
-  box-shadow: 0 0 12px rgba(63, 185, 80, 0.2);
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.12);
   transform: translateY(-3px);
 }
 
 .differential-card h4 {
-  color: var(--accent-light);
+  color: var(--accent-dark);
   margin-bottom: 8px;
   font-size: 0.95rem;
+  font-weight: 700;
 }
 
 .differential-card p {
@@ -376,9 +394,9 @@ section h2 {
 }
 
 .language-item {
-  background: rgba(88, 166, 255, 0.05);
+  background: #f3f6f8;
   padding: 15px;
-  border-radius: 6px;
+  border-radius: 8px;
   text-align: center;
   border: 1px solid var(--border);
   transition: all 0.3s ease;
@@ -386,12 +404,12 @@ section h2 {
 
 .language-item:hover {
   border-color: var(--accent);
-  background: rgba(88, 166, 255, 0.1);
+  background: #ffffff;
 }
 
 .language-item strong {
   display: block;
-  color: var(--accent-light);
+  color: var(--accent-dark);
   margin-bottom: 5px;
   font-weight: 700;
 }
@@ -403,7 +421,7 @@ section h2 {
 
 /* ====== FOOTER ====== */
 footer {
-  background: var(--secondary);
+  background: var(--primary);
   border-top: 1px solid var(--border);
   color: var(--text-muted);
   text-align: center;
@@ -414,6 +432,10 @@ footer {
 
 footer p {
   margin: 8px 0;
+}
+
+footer strong {
+  color: var(--text);
 }
 
 /* ====== RESPONSIVE ====== */
@@ -450,7 +472,7 @@ footer p {
 
   .nav a {
     font-size: 0.85rem;
-    padding: 4px 8px;
+    padding: 6px 10px;
   }
 }
 
@@ -488,7 +510,7 @@ footer p {
             <img src="foto.jpg" alt="Foto de Gabriel Henrique Santos Oliveira" class="profile-photo">
             <h1>Gabriel Henrique Santos Oliveira</h1>
             <p class="subtitle">Engenheiro de Controle e Automação</p>
-            <p class="specialty">Desenvolvimento Tecnológico | Automação de Processos | Inovação Técnica</p>
+            <p class="specialty">Desenvolvimento Tecnológico | Automação de Processos</p>
         </div>
     </header>
 
@@ -535,10 +557,9 @@ footer p {
         <!-- ABOUT -->
         <section id="about">
             <h2><i class="fas fa-sparkles"></i> Sobre</h2>
-            <p style="margin-top: 15px; color: var(--text); line-height: 1.8; font-size: 1rem;">
-                Profissional de engenharia com expertise em automação e controle industrial, especializado em CLPs virtualizados e Indústria 4.0. 
-                Comprometido com inovação técnica, qualidade e soluções sustentáveis. Profissional criativo e inovador com sólida formação em design 
-                mecânico (FreeCAD), esquemas elétricos (QElectroTech), gestão de projetos ágeis e pensamento inovador.
+            <p class="about-text">
+                Profissional de engenharia com expertise em automação e controle industrial. Comprometido com inovação técnica, 
+                qualidade e soluções sustentáveis que agregam valor aos projetos e processos.
             </p>
         </section>
 
@@ -588,10 +609,9 @@ footer p {
                 <p class="experience-meta">Neoenergia Elektro S.A | Agosto/2022 - Maio/2024</p>
                 <ul>
                     <li>Desenvolvimento de dashboards e relatórios em Power BI para análise de desempenho operacional</li>
-                    <li>Automação de processos repetitivos via Power Automate e VBA</li>
+                    <li>Automação de processos repetitivos via Power Automate</li>
                     <li>Gestão técnica, documentação e controle de sistemas de monitoramento</li>
-                    <li>Análise de dados com SQL, Excel avançado e criação de modelos analíticos</li>
-                    <li>Pensamento criativo na otimização de workflows e solução de problemas complexos</li>
+                    <li>Análise de dados com SQL e Excel avançado, criação de modelos analíticos</li>
                 </ul>
                 <div class="tags">
                     <span class="tag">Power BI</span>
@@ -621,11 +641,11 @@ footer p {
                 </div>
                 <div class="skill-card">
                     <h4><i class="fas fa-chart-bar"></i> Desenvolvimento & Dados</h4>
-                    <p>SQL, Power BI, Power Automate, Excel Avançado, Python, VBA, Modelagem de dados</p>
+                    <p>SQL, Power BI, Power Automate, Excel Avançado, Python, Modelagem de dados</p>
                 </div>
                 <div class="skill-card">
                     <h4><i class="fas fa-tasks"></i> Agile & Gestão</h4>
-                    <p>Scrum, Trello, Jira, Gestão de Backlog, Facilitação de Cerimônias, Liderança Técnica, Gestão de Finanças de Projeto</p>
+                    <p>Scrum, Trello, Jira, Gestão de Backlog, Facilitação de Cerimônias, Liderança Técnica, Gestão de Projetos</p>
                 </div>
                 <div class="skill-card">
                     <h4><i class="fas fa-lightbulb"></i> Inovação & Criatividade</h4>
@@ -679,8 +699,8 @@ footer p {
                     <p>Operação 24/7 de infraestruturas estratégicas de energia elétrica com alto padrão de qualidade</p>
                 </div>
                 <div class="differential-card">
-                    <h4>Gestão Técnica & Finanças</h4>
-                    <p>Gestão de projetos com visão financeira, otimização de recursos e pensamento estratégico</p>
+                    <h4>Gestão Técnica & Projetos</h4>
+                    <p>Gestão de projetos com visão estratégica, otimização de recursos e liderança colaborativa</p>
                 </div>
             </div>
         </section>
@@ -708,7 +728,7 @@ footer p {
     <!-- FOOTER -->
     <footer>
         <p><strong>Gabriel Henrique Santos Oliveira</strong> | Engenheiro de Controle e Automação</p>
-        <p>Portfólio atualizado em Novembro 15, 2025 | <i class="fas fa-code"></i> Desenvolvido com HTML5 & CSS3</p>
+        <p>Portfólio atualizado em Novembro 15, 2025</p>
     </footer>
 
     <script>
