@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Henrique Santos Oliveira | Engenheiro de Controle e Automação</title>
     <meta name="description" content="Gabriel Henrique - Engenheiro especialista em CLPs Virtualizados, Automação Industrial e Inovação Técnica.">
-    <meta name="keywords" content="Engenheiro, CLP, Virtualização, SCADA, Indústria 4.0, Inovação, Design Técnico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
 * {
@@ -15,32 +14,31 @@
 }
 
 :root {
-  --primary: #ffffff;
-  --secondary: #f3f6f8;
-  --accent: #0a66c2;
-  --accent-light: #0d66d0;
-  --accent-dark: #004182;
-  --text: #000000;
-  --text-muted: #666666;
-  --border: #e5e7eb;
-  --success: #0caf00;
+  --dark: #2d2d2d;
+  --orange: #ff9800;
+  --cream: #f5f1e8;
+  --cream-light: #faf8f3;
+  --text-dark: #1a1a1a;
+  --text-gray: #666666;
+  --border: #e0dcd4;
+  --accent: #ff9800;
 }
 
 html, body {
   width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: linear-gradient(135deg, #f3f6f8 0%, #e8ecf1 100%);
-  color: var(--text);
+  background: linear-gradient(to right, #f5f1e8 0%, #f5f1e8 50%, #faf8f3 50%, #faf8f3 100%);
+  color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* ====== HEADER COM FOTO ====== */
+/* ====== HEADER COM FOTO E DESIGN ====== */
 .header {
-  background: linear-gradient(135deg, #0a66c2 0%, #0d66d0 100%);
-  color: #ffffff;
-  padding: 60px 20px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 400px;
+  align-items: center;
   position: relative;
   overflow: hidden;
 }
@@ -48,29 +46,32 @@ html, body {
 .header::before {
   content: '';
   position: absolute;
-  top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  pointer-events: none;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #2d2d2d 0%, #2d2d2d 50%, #f5f1e8 50%, #f5f1e8 100%);
+  z-index: 0;
 }
 
-.header-content {
+.header-left {
   position: relative;
   z-index: 1;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-photo {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  border: 4px solid #ffffff;
+  border: 4px solid var(--orange);
   object-fit: cover;
-  margin: 0 auto 25px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
   transition: transform 0.3s ease;
 }
 
@@ -78,91 +79,115 @@ html, body {
   transform: scale(1.05);
 }
 
-.header h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-  font-weight: 900;
-  letter-spacing: -1px;
-}
-
-.header .subtitle {
+.header-left h1 {
   font-size: 1.4rem;
-  margin-bottom: 10px;
-  opacity: 0.95;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
 }
 
-.header .specialty {
-  font-size: 1rem;
+.header-left p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+}
+
+.header-right {
+  position: relative;
+  z-index: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-right h2 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  text-align: center;
   margin-bottom: 20px;
-  opacity: 0.85;
+  letter-spacing: 0.5px;
+}
+
+.circuit-icon {
+  font-size: 3rem;
+  color: var(--orange);
+  margin-bottom: 15px;
+  opacity: 0.9;
 }
 
 /* ====== NAVIGATION ====== */
 .nav {
   background: #ffffff;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--orange);
   padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .nav-content {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
-  gap: 20px;
+  gap: 25px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .nav a {
-  color: var(--text-muted);
+  color: var(--text-gray);
   text-decoration: none;
   padding: 8px 12px;
-  border-radius: 6px;
+  border-radius: 4px;
   transition: all 0.3s ease;
   font-size: 0.95rem;
   font-weight: 500;
 }
 
 .nav a:hover {
-  color: var(--accent);
-  background: rgba(10, 102, 194, 0.08);
+  color: var(--orange);
+  background: rgba(255, 152, 0, 0.08);
 }
 
 /* ====== CONTAINER ====== */
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 /* ====== SECTIONS ====== */
 section {
-  background: var(--primary);
+  background: #ffffff;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-left: 4px solid var(--orange);
+  border-radius: 4px;
   margin: 30px auto;
   padding: 40px;
   transition: all 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 section:hover {
-  border-color: var(--accent);
-  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.1);
+  box-shadow: 0 4px 16px rgba(255, 152, 0, 0.1);
 }
 
 section h2 {
-  color: var(--accent-dark);
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--accent);
-  display: inline-block;
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  margin-bottom: 25px;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+section h2 i {
+  color: var(--orange);
 }
 
 /* ====== CONTACT ====== */
@@ -178,37 +203,35 @@ section h2 {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  background: #f3f6f8;
-  border-radius: 6px;
-  border-left: 3px solid var(--accent);
+  background: #faf8f3;
+  border-radius: 4px;
+  border-left: 3px solid var(--orange);
   transition: all 0.3s ease;
 }
 
 .contact-item:hover {
-  background: rgba(10, 102, 194, 0.08);
+  background: #f5f1e8;
   transform: translateX(5px);
 }
 
 .contact-item i {
-  color: var(--accent);
-  font-size: 1.3rem;
-  min-width: 25px;
+  color: var(--orange);
+  font-size: 1.2rem;
+  min-width: 20px;
 }
 
 .contact-item a {
-  color: var(--accent);
+  color: var(--orange);
   text-decoration: none;
-  transition: color 0.3s ease;
   font-weight: 500;
 }
 
 .contact-item a:hover {
-  color: var(--accent-light);
   text-decoration: underline;
 }
 
 .contact-item span {
-  color: var(--text);
+  color: var(--text-dark);
   font-weight: 500;
 }
 
@@ -216,7 +239,7 @@ section h2 {
 .about-text {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: var(--text-muted);
+  color: var(--text-gray);
   margin-top: 15px;
 }
 
@@ -229,44 +252,43 @@ section h2 {
 
 .experience-item:last-child {
   border-bottom: none;
-  margin-bottom: 0;
 }
 
 .experience-item h3 {
-  color: var(--accent-dark);
-  font-size: 1.2rem;
+  color: var(--text-dark);
+  font-size: 1.15rem;
   margin-bottom: 5px;
   font-weight: 700;
 }
 
 .experience-meta {
-  color: var(--accent);
+  color: var(--orange);
   font-weight: 600;
-  margin-bottom: 10px;
   font-size: 0.9rem;
+  margin-bottom: 10px;
 }
 
 .experience-item ul {
   list-style: none;
   margin-top: 12px;
-  margin-left: 0;
 }
 
 .experience-item li {
   padding: 8px 0;
   padding-left: 20px;
   position: relative;
-  color: var(--text);
+  color: var(--text-dark);
 }
 
 .experience-item li:before {
-  content: "→";
+  content: "◆";
   position: absolute;
   left: 0;
-  color: var(--accent);
-  font-weight: bold;
+  color: var(--orange);
+  font-size: 0.8rem;
 }
 
+/* ====== TAGS ====== */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -275,19 +297,20 @@ section h2 {
 }
 
 .tag {
-  background: linear-gradient(135deg, rgba(10, 102, 194, 0.08), rgba(10, 102, 194, 0.05));
-  color: var(--accent);
+  background: #faf8f3;
+  color: var(--orange);
   padding: 6px 12px;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  border: 1px solid rgba(10, 102, 194, 0.3);
+  border: 1px solid var(--orange);
   transition: all 0.3s ease;
 }
 
 .tag:hover {
-  background: linear-gradient(135deg, rgba(10, 102, 194, 0.15), rgba(10, 102, 194, 0.1));
-  transform: translateY(-2px);
+  background: var(--orange);
+  color: #ffffff;
+  transform: scale(1.05);
 }
 
 /* ====== SKILLS GRID ====== */
@@ -299,30 +322,33 @@ section h2 {
 }
 
 .skill-card {
-  background: #f3f6f8;
+  background: #faf8f3;
   padding: 18px;
-  border-radius: 8px;
-  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  border-left: 4px solid var(--orange);
   transition: all 0.3s ease;
-  border: 1px solid var(--border);
 }
 
 .skill-card:hover {
-  background: #ffffff;
+  background: #f5f1e8;
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.12);
-  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.15);
 }
 
 .skill-card h4 {
-  color: var(--accent-dark);
+  color: var(--text-dark);
   margin-bottom: 10px;
   font-size: 1rem;
   font-weight: 700;
 }
 
+.skill-card h4 i {
+  color: var(--orange);
+  margin-right: 8px;
+}
+
 .skill-card p {
-  color: var(--text-muted);
+  color: var(--text-gray);
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -339,14 +365,14 @@ section h2 {
 }
 
 .education-item h3 {
-  color: var(--accent-dark);
-  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-size: 1.05rem;
   margin-bottom: 5px;
   font-weight: 700;
 }
 
 .education-meta {
-  color: var(--text-muted);
+  color: var(--text-gray);
   font-size: 0.9rem;
 }
 
@@ -359,28 +385,28 @@ section h2 {
 }
 
 .differential-card {
-  background: #f3f6f8;
+  background: #faf8f3;
   padding: 18px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
+  border-radius: 4px;
+  border-left: 4px solid var(--orange);
   transition: all 0.3s ease;
 }
 
 .differential-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.12);
+  background: #f5f1e8;
   transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.15);
 }
 
 .differential-card h4 {
-  color: var(--accent-dark);
+  color: var(--text-dark);
   margin-bottom: 8px;
   font-size: 0.95rem;
   font-weight: 700;
 }
 
 .differential-card p {
-  color: var(--text-muted);
+  color: var(--text-gray);
   font-size: 0.85rem;
   line-height: 1.5;
 }
@@ -394,36 +420,35 @@ section h2 {
 }
 
 .language-item {
-  background: #f3f6f8;
+  background: #faf8f3;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 4px;
   text-align: center;
-  border: 1px solid var(--border);
+  border-left: 4px solid var(--orange);
   transition: all 0.3s ease;
 }
 
 .language-item:hover {
-  border-color: var(--accent);
-  background: #ffffff;
+  background: #f5f1e8;
 }
 
 .language-item strong {
   display: block;
-  color: var(--accent-dark);
+  color: var(--text-dark);
   margin-bottom: 5px;
   font-weight: 700;
 }
 
 .language-item span {
-  color: var(--text-muted);
+  color: var(--text-gray);
   font-size: 0.85rem;
 }
 
 /* ====== FOOTER ====== */
 footer {
-  background: var(--primary);
-  border-top: 1px solid var(--border);
-  color: var(--text-muted);
+  background: var(--dark);
+  border-top: 4px solid var(--orange);
+  color: #ffffff;
   text-align: center;
   padding: 30px 20px;
   margin-top: 50px;
@@ -435,24 +460,35 @@ footer p {
 }
 
 footer strong {
-  color: var(--text);
+  color: var(--orange);
 }
 
 /* ====== RESPONSIVE ====== */
-@media (max-width: 768px) {
-  .header h1 {
-    font-size: 1.8rem;
+@media (max-width: 960px) {
+  .header {
+    grid-template-columns: 1fr;
+    min-height: auto;
   }
 
-  .header .subtitle {
+  .header::before {
+    background: linear-gradient(to bottom, #2d2d2d 0%, #2d2d2d 50%, #f5f1e8 50%, #f5f1e8 100%);
+  }
+
+  .header-left,
+  .header-right {
+    padding: 40px 30px;
+  }
+
+  .header-left h1 {
+    font-size: 1.2rem;
+  }
+
+  .header-right h2 {
     font-size: 1.1rem;
   }
+}
 
-  .profile-photo {
-    width: 120px;
-    height: 120px;
-  }
-
+@media (max-width: 768px) {
   section {
     padding: 25px;
     margin: 20px auto;
@@ -467,7 +503,7 @@ footer strong {
   }
 
   .nav-content {
-    gap: 10px;
+    gap: 15px;
   }
 
   .nav a {
@@ -477,16 +513,23 @@ footer strong {
 }
 
 @media (max-width: 480px) {
-  .header {
-    padding: 40px 15px;
+  .header-left,
+  .header-right {
+    padding: 30px 20px;
   }
 
-  .header h1 {
-    font-size: 1.4rem;
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
   }
 
-  .header .subtitle {
-    font-size: 0.9rem;
+  .header-left h1 {
+    font-size: 1rem;
+  }
+
+  .header-right h2 {
+    font-size: 0.95rem;
   }
 
   section {
@@ -504,13 +547,18 @@ footer strong {
     </style>
 </head>
 <body>
-    <!-- HEADER COM FOTO -->
+    <!-- HEADER COM DESIGN LINKEDIN -->
     <header class="header">
-        <div class="header-content">
-            <img src="foto.jpg" alt="Foto de Gabriel Henrique Santos Oliveira" class="profile-photo">
-            <h1>Gabriel Henrique Santos Oliveira</h1>
-            <p class="subtitle">Engenheiro de Controle e Automação</p>
-            <p class="specialty">Desenvolvimento Tecnológico | Automação de Processos</p>
+        <div class="header-left">
+            <img src="foto.jpg" alt="Gabriel Henrique Santos Oliveira" class="profile-photo">
+            <h1>Gabriel Henrique<br>Santos Oliveira</h1>
+            <p>Engenheiro de Controle e Automação</p>
+        </div>
+        <div class="header-right">
+            <div class="circuit-icon">
+                <i class="fas fa-microchip"></i>
+            </div>
+            <h2>Engenheiro de Controle<br>e Automação<br>Tecnologias Embarcadas</h2>
         </div>
     </header>
 
@@ -571,7 +619,7 @@ footer strong {
                 <h3>Scrum Master - Desenvolvimento Embarcado em CLPs Virtualizados</h3>
                 <p class="experience-meta">CPQD / PUC-PR | Atualmente</p>
                 <ul>
-                    <li>Coordenação de equipe multidisciplinar em projeto de virtualização e desenvolvimento de Controladores Lógicos Programáveis (CLPs)</li>
+                    <li>Coordenação de equipe multidisciplinar em projeto de virtualização e desenvolvimento de CLPs</li>
                     <li>Aplicação de metodologia ágil em arquitetura e soluções de automação industrial com CLPs físicos e virtualizados</li>
                     <li>Facilitação de cerimônias Scrum e gestão de backlog técnico com foco em desenvolvimento embarcado</li>
                     <li>Liderança colaborativa em projetos de Indústria 4.0 (IoT, SCADA, Cloud, Edge Computing)</li>
@@ -608,7 +656,7 @@ footer strong {
                 <h3>Estagiário de Engenharia - Operações de Frota</h3>
                 <p class="experience-meta">Neoenergia Elektro S.A | Agosto/2022 - Maio/2024</p>
                 <ul>
-                    <li>Desenvolvimento de dashboards e relatórios em Power BI para análise de desempenho operacional</li>
+                    <li>Desenvolvimento de dashboards em Power BI para análise de desempenho operacional</li>
                     <li>Automação de processos repetitivos via Power Automate</li>
                     <li>Gestão técnica, documentação e controle de sistemas de monitoramento</li>
                     <li>Análise de dados com SQL e Excel avançado, criação de modelos analíticos</li>
@@ -618,7 +666,6 @@ footer strong {
                     <span class="tag">SQL</span>
                     <span class="tag">Excel</span>
                     <span class="tag">Automação</span>
-                    <span class="tag">Análise</span>
                 </div>
             </div>
         </section>
@@ -629,15 +676,15 @@ footer strong {
             <div class="skills-grid">
                 <div class="skill-card">
                     <h4><i class="fas fa-microchip"></i> Controle & Automação</h4>
-                    <p>SCADA, Ladder, IL, FBD, ST, CLPs Virtualizados, Hardware-in-the-Loop (HIL), Controle de Processos, Sistemas Tempo Real</p>
+                    <p>SCADA, Ladder, IL, FBD, ST, CLPs Virtualizados, Hardware-in-the-Loop (HIL), Controle de Processos</p>
                 </div>
                 <div class="skill-card">
                     <h4><i class="fas fa-cube"></i> Design Mecânico</h4>
-                    <p><strong>FreeCAD</strong> - Modelagem 3D, Desenho técnico, Simulação mecânica, Documentação de projeto</p>
+                    <p><strong>FreeCAD</strong> - Modelagem 3D, Desenho técnico, Simulação mecânica</p>
                 </div>
                 <div class="skill-card">
                     <h4><i class="fas fa-bolt"></i> Esquemas Elétricos</h4>
-                    <p><strong>QElectroTech</strong> - Esquemas elétricos, Diagramas de circuito, Documentação elétrica, Simbologia industrial</p>
+                    <p><strong>QElectroTech</strong> - Esquemas elétricos, Diagramas de circuito, Simbologia industrial</p>
                 </div>
                 <div class="skill-card">
                     <h4><i class="fas fa-chart-bar"></i> Desenvolvimento & Dados</h4>
@@ -645,11 +692,11 @@ footer strong {
                 </div>
                 <div class="skill-card">
                     <h4><i class="fas fa-tasks"></i> Agile & Gestão</h4>
-                    <p>Scrum, Trello, Jira, Gestão de Backlog, Facilitação de Cerimônias, Liderança Técnica, Gestão de Projetos</p>
+                    <p>Scrum, Trello, Jira, Gestão de Backlog, Liderança Técnica, Gestão de Projetos</p>
                 </div>
                 <div class="skill-card">
                     <h4><i class="fas fa-lightbulb"></i> Inovação & Criatividade</h4>
-                    <p>Pensamento criativo, Problem-solving, Design Thinking, Otimização de processos, Ideação e prototipagem</p>
+                    <p>Pensamento criativo, Problem-solving, Design Thinking, Otimização de processos</p>
                 </div>
             </div>
         </section>
@@ -680,27 +727,27 @@ footer strong {
             <div class="differentials-grid">
                 <div class="differential-card">
                     <h4>Expertise em CLPs Virtualizados</h4>
-                    <p>Conhecimento especializado em arquitetura, programação e simulação de controladores lógicos com aplicação prática</p>
+                    <p>Conhecimento especializado em arquitetura, programação e simulação</p>
                 </div>
                 <div class="differential-card">
                     <h4>Design Técnico Integrado</h4>
-                    <p>FreeCAD (modelagem 3D) + QElectroTech (esquemas elétricos) = soluções completas de engenharia</p>
+                    <p>FreeCAD + QElectroTech = soluções completas de engenharia</p>
                 </div>
                 <div class="differential-card">
                     <h4>Inovação e Criatividade</h4>
-                    <p>Pensamento criativo, problem-solving avançado e capacidade de ideação para soluções inovadoras</p>
+                    <p>Pensamento criativo e problem-solving para soluções inovadoras</p>
                 </div>
                 <div class="differential-card">
                     <h4>Formação Contínua</h4>
-                    <p>Pós-graduação em Software (USP) + Residência CPQD em virtualização de CLPs</p>
+                    <p>Pós-graduação USP + Residência CPQD em virtualização</p>
                 </div>
                 <div class="differential-card">
                     <h4>Experiência em Sistemas Críticos</h4>
-                    <p>Operação 24/7 de infraestruturas estratégicas de energia elétrica com alto padrão de qualidade</p>
+                    <p>Operação 24/7 de infraestruturas estratégicas de energia</p>
                 </div>
                 <div class="differential-card">
                     <h4>Gestão Técnica & Projetos</h4>
-                    <p>Gestão de projetos com visão estratégica, otimização de recursos e liderança colaborativa</p>
+                    <p>Gestão com visão estratégica e liderança colaborativa</p>
                 </div>
             </div>
         </section>
@@ -732,7 +779,6 @@ footer strong {
     </footer>
 
     <script>
-        // Smooth scroll para navegação
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
