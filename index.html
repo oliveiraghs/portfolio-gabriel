@@ -6,6 +6,7 @@
     <title>Gabriel Henrique Santos Oliveira | Portfólio</title>
     <meta name="description" content="Gabriel Henrique - Profissional de engenharia especializado em automação, inovação e soluções técnicas de alto impacto.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
 * {
   margin: 0;
@@ -31,7 +32,6 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ====== HEADER COM IMAGEM ====== */
 .header-custom {
   width: 100%;
   max-width: 100%;
@@ -62,7 +62,6 @@ html, body {
   z-index: 1;
 }
 
-/* ====== FOTO REDONDA CENTRALIZADA ====== */
 .profile-photo-wrapper {
   position: relative;
   z-index: 10;
@@ -432,7 +431,37 @@ footer strong {
   color: var(--orange);
 }
 
-/* ====== RESPONSIVE ====== */
+/* ====== BOTÃO FLUTUANTE PDF ====== */
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--orange) 0%, #ff8c00 100%);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  z-index: 99;
+  text-decoration: none;
+}
+
+.floating-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.6);
+}
+
+.floating-btn:active {
+  transform: scale(0.95);
+}
+
 @media (max-width: 768px) {
   .header-custom {
     min-height: 250px;
@@ -465,6 +494,14 @@ footer strong {
     font-size: 0.85rem;
     padding: 6px 10px;
   }
+
+  .floating-btn {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1.3rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -489,10 +526,23 @@ footer strong {
   .languages-grid {
     grid-template-columns: 1fr;
   }
+
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    left: 15px;
+    font-size: 1.2rem;
+  }
 }
     </style>
 </head>
 <body>
+    <!-- BOTÃO FLUTUANTE PDF -->
+    <button class="floating-btn" onclick="exportarPDF()" title="Exportar em PDF">
+        <i class="fas fa-file-pdf"></i>
+    </button>
+
     <!-- HEADER COM IMAGEM DE CAPA E FOTO REDONDA -->
     <header class="header-custom">
         <img src="capa.jpg" alt="Capa do Portfólio" class="header-background">
@@ -722,6 +772,19 @@ footer strong {
                 }
             });
         });
+
+        // Função para exportar em PDF
+        function exportarPDF() {
+            const element = document.documentElement;
+            const opt = {
+                margin: 10,
+                filename: 'Gabriel_Henrique_Portfolio.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+            };
+            html2pdf().set(opt).save();
+        }
     </script>
 </body>
 </html>
