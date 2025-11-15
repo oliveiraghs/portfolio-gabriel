@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gabriel Henrique Santos Oliveira | Portfólio</title>
-<meta name="description" content="Gabriel Henrique - Profissional de engenharia especializado em automação, inovação e soluções técnicas de alto impacto." />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Henrique Santos Oliveira | Portfólio</title>
+    <meta name="description" content="Gabriel Henrique - Profissional de engenharia especializado em automação, inovação e soluções técnicas de alto impacto.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --dark: #2d2d2d;
   --orange: #ff9800;
@@ -21,8 +22,8 @@
   --text-gray: #666666;
   --border: #e0dcd4;
 }
-html,
-body {
+
+html, body {
   width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background: #ffffff;
@@ -30,6 +31,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
+
 .header-custom {
   width: 100%;
   max-width: 100%;
@@ -45,6 +47,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .header-background {
   width: 100%;
   height: 100%;
@@ -58,6 +61,7 @@ body {
   left: 0;
   z-index: 1;
 }
+
 .profile-photo-wrapper {
   position: relative;
   z-index: 10;
@@ -65,6 +69,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .profile-photo {
   width: 200px;
   height: 200px;
@@ -75,10 +80,12 @@ body {
   transition: transform 0.3s ease;
   display: block;
 }
+
 .profile-photo:hover {
   transform: scale(1.05);
 }
-/* Navigation */
+
+/* ====== NAVIGATION ====== */
 .nav {
   background: #ffffff;
   border-bottom: 3px solid var(--orange);
@@ -88,6 +95,7 @@ body {
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
 .nav-content {
   max-width: 900px;
   margin: 0 auto;
@@ -96,6 +104,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .nav a {
   color: var(--text-gray);
   text-decoration: none;
@@ -108,17 +117,20 @@ body {
   align-items: center;
   gap: 8px;
 }
+
 .nav a:hover {
   color: var(--orange);
   background: rgba(255, 152, 0, 0.08);
 }
-/* Container */
+
+/* ====== CONTAINER ====== */
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
 }
-/* Sections */
+
+/* ====== SECTIONS ====== */
 section {
   background: #ffffff;
   border: 1px solid var(--border);
@@ -128,9 +140,11 @@ section {
   padding: 40px;
   transition: all 0.3s ease;
 }
+
 section:hover {
   box-shadow: 0 4px 16px rgba(255, 152, 0, 0.1);
 }
+
 section h2 {
   color: var(--text-dark);
   font-size: 1.5rem;
@@ -140,17 +154,19 @@ section h2 {
   align-items: center;
   gap: 12px;
 }
+
 section h2 i {
   color: var(--orange);
 }
 
-/* Contact */
+/* ====== CONTACT ====== */
 .contact-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
   margin-top: 20px;
 }
+
 .contact-item {
   display: flex;
   align-items: center;
@@ -161,28 +177,34 @@ section h2 i {
   border-left: 3px solid var(--orange);
   transition: all 0.3s ease;
 }
+
 .contact-item:hover {
   background: #f5f1e8;
   transform: translateX(5px);
 }
+
 .contact-item i {
   color: var(--orange);
   font-size: 1.2rem;
   min-width: 20px;
 }
+
 .contact-item a {
   color: var(--orange);
   text-decoration: none;
   font-weight: 500;
 }
+
 .contact-item a:hover {
   text-decoration: underline;
 }
+
 .contact-item span {
   color: var(--text-dark);
   font-weight: 500;
 }
-/* About */
+
+/* ====== ABOUT ====== */
 .about-text {
   font-size: 1.1rem;
   line-height: 1.9;
@@ -190,8 +212,207 @@ section h2 i {
   margin-top: 15px;
 }
 
-/* Experience and skills omitted for brevity, keep your existing */
+/* ====== EXPERIENCE ====== */
+.experience-item {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
 
+.experience-item:last-child {
+  border-bottom: none;
+}
+
+.experience-item h3 {
+  color: var(--text-dark);
+  font-size: 1.15rem;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.experience-meta {
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.experience-item ul {
+  list-style: none;
+  margin-top: 12px;
+}
+
+.experience-item li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  color: var(--text-dark);
+}
+
+.experience-item li:before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-size: 0.8rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  background: #faf8f3;
+  color: var(--orange);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--orange);
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: var(--orange);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* ====== SKILLS GRID ====== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.skill-card {
+  background: #faf8f3;
+  padding: 18px;
+  border-radius: 4px;
+  border-left: 4px solid var(--orange);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  background: #f5f1e8;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.15);
+}
+
+.skill-card h4 {
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.skill-card h4 i {
+  color: var(--orange);
+  margin-right: 8px;
+}
+
+.skill-card p {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ====== EDUCATION ====== */
+.education-item {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.education-item:last-child {
+  border-bottom: none;
+}
+
+.education-item h3 {
+  color: var(--text-dark);
+  font-size: 1.05rem;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.education-meta {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+
+/* ====== DIFFERENTIALS ====== */
+.differentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.differential-card {
+  background: #faf8f3;
+  padding: 18px;
+  border-radius: 4px;
+  border-left: 4px solid var(--orange);
+  transition: all 0.3s ease;
+}
+
+.differential-card:hover {
+  background: #f5f1e8;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.15);
+}
+
+.differential-card h4 {
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.differential-card p {
+  color: var(--text-gray);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ====== LANGUAGES ====== */
+.languages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.language-item {
+  background: #faf8f3;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+  border-left: 4px solid var(--orange);
+  transition: all 0.3s ease;
+}
+
+.language-item:hover {
+  background: #f5f1e8;
+}
+
+.language-item strong {
+  display: block;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.language-item span {
+  color: var(--text-gray);
+  font-size: 0.85rem;
+}
+
+/* ====== FOOTER ====== */
 footer {
   background: var(--dark);
   border-top: 4px solid var(--orange);
@@ -210,8 +431,7 @@ footer strong {
   color: var(--orange);
 }
 
-/* Floating Buttons */
-
+/* ====== BOTÕES FLUTUANTES ====== */
 .floating-btn, .floating-btn-whatsapp {
   position: fixed;
   right: 30px;
@@ -230,13 +450,15 @@ footer strong {
   z-index: 99;
   text-decoration: none;
 }
+
 .floating-btn {
   background: linear-gradient(135deg, var(--orange) 0%, #ff8c00 100%);
   bottom: 30px;
 }
+
 .floating-btn-whatsapp {
   background: linear-gradient(135deg, var(--orange) 0%, #ffae42 100%);
-  bottom: 100px; /* Above the PDF button */
+  bottom: 100px;
   font-size: 1.6rem;
 }
 
@@ -250,71 +472,281 @@ footer strong {
 }
 
 @media (max-width: 768px) {
+  .header-custom { min-height: 250px; }
+  .profile-photo { width: 150px; height: 150px; border: 5px solid var(--orange); }
+  section { padding: 25px; margin: 20px auto; }
+  section h2 { font-size: 1.3rem; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .nav-content { gap: 15px; }
+  .nav a { font-size: 0.85rem; padding: 6px 10px; }
   .floating-btn, .floating-btn-whatsapp {
-    width: 55px;
-    height: 55px;
-    right: 20px;
-    font-size: 1.3rem;
+    width: 55px; height: 55px; right: 20px; font-size: 1.3rem;
   }
-  .floating-btn {
-    bottom: 20px;
-  }
-  .floating-btn-whatsapp {
-    bottom: 80px;
-  }
+  .floating-btn { bottom: 20px; }
+  .floating-btn-whatsapp { bottom: 80px; }
 }
 
 @media (max-width: 480px) {
+  .header-custom { min-height: 200px; }
+  .profile-photo { width: 120px; height: 120px; border: 4px solid var(--orange); }
+  section { padding: 20px; }
+  .contact-info { grid-template-columns: 1fr; }
+  .languages-grid { grid-template-columns: 1fr; }
   .floating-btn, .floating-btn-whatsapp {
-    width: 48px;
-    height: 48px;
-    right: 10px;
-    font-size: 1.1rem;
+    width: 48px; height: 48px; right: 10px; font-size: 1.1rem;
   }
-  .floating-btn {
-    bottom: 14px;
-  }
-  .floating-btn-whatsapp {
-    bottom: 70px;
-  }
+  .floating-btn { bottom: 14px; }
+  .floating-btn-whatsapp { bottom: 70px; }
 }
-</style>
+    </style>
 </head>
 <body>
-  <!-- Floating Buttons -->
-  <button class="floating-btn" onclick="exportarPDF()" title="Exportar em PDF">
-    <i class="fas fa-file-pdf"></i>
-  </button>
-  <a href="https://wa.me/5519971069954" class="floating-btn floating-btn-whatsapp" target="_blank" title="Contato WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <!-- Header -->
-  <header class="header-custom">
-    <img src="capa.jpg" alt="Capa do Portfólio" class="header-background" />
-    <div class="profile-photo-wrapper">
-      <img src="foto.jpg" alt="Gabriel Henrique Santos Oliveira" class="profile-photo" />
-    </div>
-  </header>
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-content">
-      <a href="#contact"><i class="fas fa-envelope"></i> Contato</a>
-      <a href="#about"><i class="fas fa-user"></i> Sobre</a>
-      <a href="#experience"><i class="fas fa-briefcase"></i> Experiência</a>
-      <a href="#skills"><i class="fas fa-cogs"></i> Competências</a>
-      <a href="#education"><i class="fas fa-graduation-cap"></i> Formação</a>
-    </div>
-  </nav>
-  <!-- Main content -->
-  <div class="container">
-    <!-- Contact -->
-    <section id="contact">
-      <h2><i class="fas fa-envelope"></i> Contato</h2>
-      <div class="contact-info">
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:ghs.oliveira@outlook.com">ghs.oliveira@outlook.com</a>
+    <!-- BOTÕES FLUTUANTES -->
+    <button class="floating-btn" onclick="exportarPDF()" title="Exportar em PDF">
+        <i class="fas fa-file-pdf"></i>
+    </button>
+    <a href="https://wa.me/5519971069954" class="floating-btn-whatsapp" target="_blank" title="Contato WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- HEADER -->
+    <header class="header-custom">
+        <img src="capa.jpg" alt="Capa do Portfólio" class="header-background">
+        <div class="profile-photo-wrapper">
+            <img src="foto.jpg" alt="Gabriel Henrique Santos Oliveira" class="profile-photo">
         </div>
-        <div class="contact-item">
-          <i class="fas fa-phone"></i>
-          <span>(19) 97106-9954</span>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#contact"><i class="fas fa-envelope"></i> Contato</a>
+            <a href="#about"><i class="fas fa-user"></i> Sobre</a>
+            <a href="#experience"><i class="fas fa-briefcase"></i> Experiência</a>
+            <a href="#skills"><i class="fas fa-cogs"></i> Competências</a>
+            <a href="#education"><i class="fas fa-graduation-cap"></i> Formação</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2><i class="fas fa-envelope"></i> Contato</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:ghs.oliveira@outlook.com">ghs.oliveira@outlook.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(19) 97106-9954</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Campinas, São Paulo</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/gabriel-henrique-santos-oliveira-401925a2/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <h2><i class="fas fa-sparkles"></i> Sobre</h2>
+            <p class="about-text">
+                Sou um profissional apaixonado por engenharia e inovação, dedicado a transformar desafios técnicos complexos em soluções elegantes e sustentáveis. Com uma trajetória sólida em automação industrial e sistemas de controle, trago uma perspectiva única que combina pensamento analítico com criatividade para gerar impacto real.
+            </p>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
+
+            <div class="experience-item">
+                <h3>Scrum Master - Desenvolvimento Embarcado em CLPs Virtualizados</h3>
+                <p class="experience-meta">CPQD / PUC-PR | Atualmente</p>
+                <ul>
+                    <li>Coordenação de equipe multidisciplinar em projeto de virtualização e desenvolvimento de CLPs</li>
+                    <li>Aplicação de metodologia ágil em arquitetura e soluções de automação industrial com CLPs físicos e virtualizados</li>
+                    <li>Facilitação de cerimônias Scrum e gestão de backlog técnico com foco em desenvolvimento embarcado</li>
+                    <li>Liderança colaborativa em projetos de Indústria 4.0 (IoT, SCADA, Cloud, Edge Computing)</li>
+                    <li>Mentoria técnica em programação de CLPs (Ladder, IL, FBD, ST) e simulação Hardware-in-the-Loop (HIL)</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">Scrum</span>
+                    <span class="tag">CLPs</span>
+                    <span class="tag">Virtualização</span>
+                    <span class="tag">Indústria 4.0</span>
+                    <span class="tag">SCADA</span>
+                    <span class="tag">IoT</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h3>Técnico em Operações de Redes Elétricas</h3>
+                <p class="experience-meta">Neoenergia Elektro S.A | Maio/2024 - Presente</p>
+                <ul>
+                    <li>Supervisão de redes de distribuição via sistemas SCADA em tempo real 24/7</li>
+                    <li>Gestão operacional com foco em confiabilidade e otimização de processos</li>
+                    <li>Liderança remota de equipes de campo geograficamente distribuídas</li>
+                    <li>Coordenação de manutenção preventiva e corretiva de sistemas críticos</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">SCADA</span>
+                    <span class="tag">Operações</span>
+                    <span class="tag">24/7</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h3>Estagiário de Engenharia - Operações de Frota</h3>
+                <p class="experience-meta">Neoenergia Elektro S.A | Agosto/2022 - Maio/2024</p>
+                <ul>
+                    <li>Desenvolvimento de dashboards e relatórios para análise de desempenho operacional</li>
+                    <li>Automação de processos repetitivos e otimização de workflows</li>
+                    <li>Gestão técnica, documentação e controle de sistemas de monitoramento</li>
+                    <li>Análise de dados e criação de modelos analíticos para suporte decisório</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">Análise</span>
+                    <span class="tag">Automação</span>
+                    <span class="tag">Excel</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <h2><i class="fas fa-cogs"></i> Competências Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4><i class="fas fa-microchip"></i> Controle & Automação</h4>
+                    <p>SCADA, Ladder, IL, FBD, ST, CLPs Virtualizados, Hardware-in-the-Loop (HIL), Controle de Processos</p>
+                </div>
+                <div class="skill-card">
+                    <h4><i class="fas fa-cube"></i> Design Mecânico</h4>
+                    <p>Modelagem 3D, Desenho técnico, Simulação mecânica, Documentação de projeto</p>
+                </div>
+                <div class="skill-card">
+                    <h4><i class="fas fa-bolt"></i> Esquemas Elétricos</h4>
+                    <p>Esquemas elétricos, Diagramas de circuito, Documentação elétrica, Simbologia industrial</p>
+                </div>
+                <div class="skill-card">
+                    <h4><i class="fas fa-chart-bar"></i> Desenvolvimento & Dados</h4>
+                    <p>SQL, Power BI, Power Automate, Excel Avançado, Python, Modelagem de dados</p>
+                </div>
+                <div class="skill-card">
+                    <h4><i class="fas fa-tasks"></i> Agile & Gestão</h4>
+                    <p>Scrum, Trello, Jira, Gestão de Backlog, Liderança Técnica, Gestão de Projetos</p>
+                </div>
+                <div class="skill-card">
+                    <h4><i class="fas fa-lightbulb"></i> Inovação & Criatividade</h4>
+                    <p>Pensamento criativo, Problem-solving, Design Thinking, Otimização de processos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h2>
+
+            <div class="education-item">
+                <h3>Engenharia de Controle e Automação</h3>
+                <p class="education-meta">Faculdade Anhanguera de Campinas | 2024 - Concluído</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Pós-graduação em Engenharia de Software</h3>
+                <p class="education-meta">Universidade de São Paulo (USP/ESALQ) | 2027 - Em andamento</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Residência Tecnológica em Virtualização de CLPs</h3>
+                <p class="education-meta">PUC-PR / CPQD | Atualmente em andamento</p>
+            </div>
+        </section>
+
+        <!-- DIFFERENTIALS -->
+        <section id="differentials">
+            <h2><i class="fas fa-star"></i> Diferenciais Profissionais</h2>
+            <div class="differentials-grid">
+                <div class="differential-card">
+                    <h4>Expertise Técnica Profunda</h4>
+                    <p>Conhecimento especializado em arquitetura, programação e simulação avançadas</p>
+                </div>
+                <div class="differential-card">
+                    <h4>Inovação Aplicada</h4>
+                    <p>Pensamento criativo e problem-solving para soluções inovadoras</p>
+                </div>
+                <div class="differential-card">
+                    <h4>Formação Contínua</h4>
+                    <p>Pós-graduação em Software + Residência em tecnologias embarcadas</p>
+                </div>
+                <div class="differential-card">
+                    <h4>Experiência em Sistemas Críticos</h4>
+                    <p>Operação 24/7 de infraestruturas estratégicas com alto padrão de qualidade</p>
+                </div>
+                <div class="differential-card">
+                    <h4>Liderança Colaborativa</h4>
+                    <p>Coordenação de equipes multidisciplinares com foco em resultados</p>
+                </div>
+                <div class="differential-card">
+                    <h4>Visão Estratégica</h4>
+                    <p>Gestão com perspectiva holística e orientação para impacto sustentável</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LANGUAGES -->
+        <section id="languages">
+            <h2><i class="fas fa-globe"></i> Idiomas</h2>
+            <div class="languages-grid">
+                <div class="language-item">
+                    <strong>Português</strong>
+                    <span>Nativo</span>
+                </div>
+                <div class="language-item">
+                    <strong>Inglês</strong>
+                    <span>Intermediário</span>
+                </div>
+                <div class="language-item">
+                    <strong>Espanhol</strong>
+                    <span>Básico</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Gabriel Henrique Santos Oliveira</strong></p>
+        <p>Portfólio atualizado em Novembro 15, 2025</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Função para exportar em PDF
+        function exportarPDF() {
+            html2pdf().from(document.body).set({
+                margin: 10,
+                filename: 'Gabriel_Henrique_Portfolio.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+            }).save();
+        }
+    </script>
+</body>
+</html>
