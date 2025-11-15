@@ -435,7 +435,7 @@ footer strong {
 .floating-btn {
   position: fixed;
   bottom: 30px;
-  left: 30px;
+  right: 30px;
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, var(--orange) 0%, #ff8c00 100%);
@@ -459,6 +459,37 @@ footer strong {
 }
 
 .floating-btn:active {
+  transform: scale(0.95);
+}
+
+/* ====== BOTÃO FLUTUANTE WHATSAPP ====== */
+.floating-btn-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(18, 140, 126, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  z-index: 99;
+  text-decoration: none;
+}
+
+.floating-btn-whatsapp:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(18, 140, 126, 0.5);
+}
+
+.floating-btn-whatsapp:active {
   transform: scale(0.95);
 }
 
@@ -499,8 +530,16 @@ footer strong {
     width: 55px;
     height: 55px;
     bottom: 20px;
-    left: 20px;
+    right: 20px;
     font-size: 1.3rem;
+  }
+
+  .floating-btn-whatsapp {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1.4rem;
   }
 }
 
@@ -531,17 +570,30 @@ footer strong {
     width: 50px;
     height: 50px;
     bottom: 15px;
-    left: 15px;
+    right: 15px;
     font-size: 1.2rem;
+  }
+
+  .floating-btn-whatsapp {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    left: 15px;
+    font-size: 1.1rem;
   }
 }
     </style>
 </head>
 <body>
-    <!-- BOTÃO FLUTUANTE PDF -->
+    <!-- BOTÃO FLUTUANTE PDF - DIREITA -->
     <button class="floating-btn" onclick="exportarPDF()" title="Exportar em PDF">
         <i class="fas fa-file-pdf"></i>
     </button>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP - ESQUERDA -->
+    <a href="https://wa.me/5519971069954" class="floating-btn-whatsapp" target="_blank" title="Contato WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- HEADER COM IMAGEM DE CAPA E FOTO REDONDA -->
     <header class="header-custom">
@@ -775,15 +827,13 @@ footer strong {
 
         // Função para exportar em PDF
         function exportarPDF() {
-            const element = document.documentElement;
-            const opt = {
+            html2pdf().from(document.body).set({
                 margin: 10,
                 filename: 'Gabriel_Henrique_Portfolio.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
                 jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
-            };
-            html2pdf().set(opt).save();
+            }).save();
         }
     </script>
 </body>
