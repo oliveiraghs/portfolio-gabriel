@@ -750,18 +750,27 @@ footer strong {
         });
 
          // Função para exportar em PDF
-    function exportarPDF() {
-        const element = document.getElementById('pdf-content');
-
-        html2pdf().set({
-            margin: 10,
-            filename: 'Gabriel_Henrique_Portfolio.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true },
-            jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' },
-            pagebreak: { mode: ['css', 'legacy'] }
-        }).from(element).save();
-        }
+   function exportarPDF() {
+    const element = document.getElementById('pdf-content');
+    
+    html2pdf().set({
+        margin: 10,
+        filename: 'Gabriel_Henrique_Portfolio.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { 
+            scale: 1.5,           // Menos agressivo que 2
+            useCORS: true,
+            height: 4000,         // Força capturar mais altura
+            windowHeight: 4000    // Altura da "janela" virtual
+        },
+        jsPDF: { 
+            orientation: 'portrait', 
+            unit: 'mm', 
+            format: 'a4' 
+        },
+        pagebreak: { mode: ['css', 'legacy'] }
+    }).from(element).save();
+}
     </script>
 </body>
 </html>
