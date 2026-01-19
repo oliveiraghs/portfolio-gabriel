@@ -508,7 +508,10 @@ footer strong {
     <a href="https://wa.me/5519971069954" class="floating-btn-whatsapp" target="_blank" title="Contato WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-
+    
+<!-- INÍCIO DO CONTEÚDO QUE VAI PRO PDF -->
+    <div id="pdf-content">
+    
     <!-- HEADER -->
     <header class="header-custom">
         <img src="capa.jpg" alt="Capa do Portfólio" class="header-background">
@@ -725,6 +728,9 @@ footer strong {
         <p><strong>Gabriel Henrique Santos Oliveira</strong></p>
         <p>Portfólio atualizado em Dezembro 29, 2025</p>
     </footer>
+
+        <!-- FIM DO CONTEÚDO QUE VAI PRO PDF -->
+    </div> <!-- fecha #pdf-content -->
 
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
