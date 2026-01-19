@@ -754,13 +754,12 @@ footer strong {
     const element = document.getElementById('pdf-content');
 
     html2pdf().set({
-        margin: 12,              // Margem um pouco maior
+        margin: 10,
         filename: 'Gabriel_Henrique_Portfolio.pdf',
         image: { type: 'jpeg', quality: 0.95 },
         html2canvas: { 
-            scale: 1.2,          // Mais suave
-            useCORS: true,
-            letterRendering: true
+            scale: 1.3, 
+            useCORS: true
         },
         jsPDF: { 
             orientation: 'portrait', 
