@@ -750,25 +750,23 @@ footer strong {
         });
 
          // Função para exportar em PDF
-  function exportarPDF() {
+ function exportarPDF() {
     const element = document.getElementById('pdf-content');
 
     html2pdf().set({
-        margin: 10,
+        margin: 12,              // Margem um pouco maior
         filename: 'Gabriel_Henrique_Portfolio.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
+        image: { type: 'jpeg', quality: 0.95 },
         html2canvas: { 
-            scale: 1.5, 
+            scale: 1.2,          // Mais suave
             useCORS: true,
-            letterRendering: true,
-            allowTaint: true
+            letterRendering: true
         },
         jsPDF: { 
             orientation: 'portrait', 
             unit: 'mm', 
             format: 'a4' 
-        },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        }
     }).from(element).save();
 }
     </script>
