@@ -743,15 +743,18 @@ footer strong {
             });
         });
 
-        // Função para exportar em PDF
-        function exportarPDF() {
-            html2pdf().from(document.body).set({
-                margin: 10,
-                filename: 'Gabriel_Henrique_Portfolio.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
-            }).save();
+         // Função para exportar em PDF
+    function exportarPDF() {
+        const element = document.getElementById('pdf-content');
+
+        html2pdf().set({
+            margin: 10,
+            filename: 'Gabriel_Henrique_Portfolio.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true },
+            jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' },
+            pagebreak: { mode: ['css', 'legacy'] }
+        }).from(element).save();
         }
     </script>
 </body>
