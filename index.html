@@ -446,7 +446,7 @@
             color: var(--orange);
         }
 
-        /* ====== BOTÕES FLUTUANTES (Não aparecem no PDF pois estão fora de #pdf-content) ====== */
+        /* ====== BOTÕES FLUTUANTES ====== */
         .floating-btn, .floating-btn-whatsapp {
             position: fixed;
             right: 30px;
@@ -518,18 +518,15 @@
         }
 
         /* ====== MODO PDF (CLASSE AUXILIAR) ====== */
-        /* Esta classe é injetada via JS apenas durante a exportação */
         .pdf-mode {
-            width: 100% !important;
-            max-width: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
+            width: 800px !important;
+            max-width: 800px !important;
+            margin: 0 auto !important;
         }
 
-        /* Garante que o conteúdo de PDF tenha largura correta */
         #pdf-content {
             margin: 0 auto;
-            /* Não force largura fixa aqui para permitir que o JS controle */
+            background: #ffffff;
         }
     </style>
 </head>
@@ -563,12 +560,9 @@
         <div class="container">
             <section id="about">
                 <h2><i class="fas fa-sparkles"></i> Gabriel Henrique Santos Oliveira</h2>
-                    <p class="about-text">
-                   </p>
-            </div>
+                <p class="about-text"></p>
             </section>
 
-        <div class="container">
             <section id="contact">
                 <h2><i class="fas fa-envelope"></i> Contato</h2>
                 <div class="contact-info">
@@ -601,7 +595,7 @@
             <section id="experience">
                 <h2><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
 
-               <div class="experience-item">
+                <div class="experience-item">
                     <h3>Residente Software Development</h3>
                     <p class="experience-meta">Instituto Minerva | Março/2026 – Atual</p>
                     <ul>
@@ -783,7 +777,9 @@
             <p>Portfólio atualizado em Maio, 2026</p>
         </footer>
 
-    </div> <script>
+    </div> 
+    
+    <script>
         // Scroll suave para links âncora
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -804,23 +800,25 @@
             const originalWidth = container.style.width;
             const originalMaxWidth = container.style.maxWidth;
 
-            // 2. Aplica modo PDF (Largura 100% para evitar cortes)
+            // 2. Aplica modo PDF (Trava a largura como desktop para não quebrar a grid)
             element.classList.add('pdf-mode');
-            container.style.width = '100%';
-            container.style.maxWidth = '100%';
+            container.style.width = '800px';
+            container.style.maxWidth = '800px';
 
-            // 3. Configurações ajustadas para A4
+            // 3. Configurações ajustadas para A4 com respeito à quebra de página
             const opt = {
-                margin: [10, 10, 10, 10], // Top, Left, Bottom, Right
+                margin: [10, 0, 10, 0], // Top, Left, Bottom, Right
                 filename: 'Gabriel_Henrique_Portfolio.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
+                image: { type: 'jpeg', quality: 1.0 },
                 html2canvas: { 
-                    scale: 2, // Resolução melhor (2x)
+                    scale: 2,
                     useCORS: true, 
                     letterRendering: true,
-                    scrollY: 0
+                    scrollY: 0,
+                    windowWidth: 800 // Informa ao canvas a largura correta
                 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                pagebreak: { mode: ['css', 'legacy'] } // Evita cortar seções ao meio
             };
 
             // 4. Gera o PDF e restaura o layout original
