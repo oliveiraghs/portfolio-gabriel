@@ -50,7 +50,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Garante que o header não quebre de forma estranha no PDF */
             page-break-inside: avoid;
         }
 
@@ -138,7 +137,6 @@
             margin: 30px auto;
             padding: 40px;
             transition: all 0.3s ease;
-            /* CORREÇÃO PDF: Evita quebra de página no meio de uma seção */
             page-break-inside: avoid; 
         }
 
@@ -166,7 +164,6 @@
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
             margin-top: 20px;
-            /* CORREÇÃO PDF */
             page-break-inside: avoid;
         }
 
@@ -220,7 +217,6 @@
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px solid var(--border);
-            /* CORREÇÃO PDF: Evita quebra dentro de um item de experiência */
             page-break-inside: avoid;
         }
 
@@ -300,7 +296,6 @@
             border-radius: 4px;
             border-left: 4px solid var(--orange);
             transition: all 0.3s ease;
-            /* CORREÇÃO PDF */
             page-break-inside: avoid;
         }
 
@@ -333,7 +328,6 @@
             margin-bottom: 18px;
             padding-bottom: 18px;
             border-bottom: 1px solid var(--border);
-            /* CORREÇÃO PDF */
             page-break-inside: avoid;
         }
 
@@ -367,7 +361,6 @@
             border-radius: 4px;
             border-left: 4px solid var(--orange);
             transition: all 0.3s ease;
-            /* CORREÇÃO PDF */
             page-break-inside: avoid;
         }
 
@@ -405,7 +398,6 @@
             text-align: center;
             border-left: 4px solid var(--orange);
             transition: all 0.3s ease;
-            /* CORREÇÃO PDF */
             page-break-inside: avoid;
         }
 
@@ -434,7 +426,6 @@
             padding: 30px 20px;
             margin-top: 50px;
             font-size: 0.9rem;
-            /* CORREÇÃO PDF */
             page-break-inside: avoid;
         }
 
@@ -518,15 +509,25 @@
         }
 
         /* ====== MODO PDF (CLASSE AUXILIAR) ====== */
+        /* Zera as margens automáticas e força largura fixa para não cortar o print */
         .pdf-mode {
             width: 800px !important;
-            max-width: 800px !important;
-            margin: 0 auto !important;
+            margin: 0 !important; 
+            padding: 0 !important;
+            background: #ffffff;
+            box-sizing: border-box !important;
         }
 
-        #pdf-content {
-            margin: 0 auto;
-            background: #ffffff;
+        .pdf-mode .container {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 40px !important; 
+            box-sizing: border-box !important;
+        }
+
+        .pdf-mode .nav {
+            position: relative !important; /* Desativa o menu fixo no PDF */
         }
     </style>
 </head>
@@ -791,41 +792,31 @@
             });
         });
 
-        // Função OTIMIZADA para exportar em PDF
+        // Função OTIMIZADA e DEFINITIVA para exportar em PDF
         function exportarPDF() {
             const element = document.getElementById('pdf-content');
-            const container = document.querySelector('.container');
 
-            // 1. Guarda os estilos originais para restaurar depois
-            const originalWidth = container.style.width;
-            const originalMaxWidth = container.style.maxWidth;
-
-            // 2. Aplica modo PDF (Trava a largura como desktop para não quebrar a grid)
+            // 1. Aplica modo PDF (Remove as margens automáticas para o script não se perder na tela)
             element.classList.add('pdf-mode');
-            container.style.width = '800px';
-            container.style.maxWidth = '800px';
 
-            // 3. Configurações ajustadas para A4 com respeito à quebra de página
+            // 2. Configurações de exportação
             const opt = {
-                margin: [10, 0, 10, 0], // Top, Left, Bottom, Right
+                margin: [10, 0, 10, 0], // Margem apenas em cima e embaixo
                 filename: 'Gabriel_Henrique_Portfolio.pdf',
                 image: { type: 'jpeg', quality: 1.0 },
                 html2canvas: { 
                     scale: 2,
                     useCORS: true, 
                     letterRendering: true,
-                    scrollY: 0,
-                    windowWidth: 800 // Informa ao canvas a largura correta
+                    scrollY: 0
                 },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-                pagebreak: { mode: ['css', 'legacy'] } // Evita cortar seções ao meio
+                pagebreak: { mode: ['css', 'legacy'] }
             };
 
-            // 4. Gera o PDF e restaura o layout original
+            // 3. Gera o PDF e limpa as classes criadas
             html2pdf().set(opt).from(element).save().then(() => {
                 element.classList.remove('pdf-mode');
-                container.style.width = originalWidth;
-                container.style.maxWidth = originalMaxWidth;
             });
         }
     </script>
